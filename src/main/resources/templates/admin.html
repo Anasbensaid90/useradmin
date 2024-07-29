@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0e2433;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #45b6fe;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #0e2433;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #45b6fe;
+            font-size: 24px;
+            font-weight: 500;
+            margin-top: 0;
+        }
+
+        .upload-container {
+            margin-top: 30px;
+            padding: 30px;
+            background-color: #0e2433;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .upload-container h2 {
+            margin-top: 0;
+        }
+
+        .upload-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-container input[type="file"] {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #0e2433;
+            border: 2px solid #45b6fe;
+            border-radius: 5px;
+            color: #F0F0F0;
+            font-size: 16px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .upload-container button {
+            margin-top: 15px;
+            background-color: #45b6fe;
+            color: #F0F0F0;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-container button:hover {
+            background-color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Plateforme Admin</h1>
+</div>
+<div class="container">
+    <h2>Bienvenue,Anas</h2>
+
+    <div class="upload-container">
+        <h2>Uploader un fichier</h2>
+        <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".docx,.pdf" required>
+            <button type="submit">Uploader</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

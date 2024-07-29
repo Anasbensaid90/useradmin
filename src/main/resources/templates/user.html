@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Utilisateur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0e2433;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #45b6fe;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #0e2433;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #45b6fe;
+            font-size: 24px;
+            font-weight: 500;
+            margin-top: 0;
+        }
+
+        .form-container {
+            margin-top: 30px;
+            padding: 30px;
+            background-color: #0e2433;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container input, .form-container textarea, .form-container select {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #0e2433;
+            border: 2px solid #45b6fe;
+            border-radius: 5px;
+            color: #F0F0F0;
+            font-size: 16px;
+            width: 100%;
+            max-width: 400px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-container input:hover, .form-container textarea:hover, .form-container select:hover {
+            border-color: #2196F3;
+        }
+
+        .form-container button {
+            margin-top: 15px;
+            background-color: #45b6fe;
+            color: #F0F0F0;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Plateforme Utilisateur</h1>
+</div>
+<div class="container">
+    <h2>Bienvenue,Anas</h2>
+
+    <div class="form-container">
+        <h2>Modifier CV</h2>
+        <form th:action="@{/modify-document}" method="post">
+            <select name="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="formation_universitaire">Formation Universitaire</option>
+                <option value="formation_continue">Formation Continue</option>
+                <option value="langues">Langues</option>
+                <option value="outils_informatiques">Outils Informatiques</option>
+                <option value="autres_projets">Autres Projets</option>
+                <option value="experience_professionnelle">Expérience Professionnelle</option>
+            </select>
+            <input type="text" name="title" placeholder="Title" required>
+            <textarea name="content" rows="5" placeholder="Content" required></textarea>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Ajouter des informations</h2>
+        <form th:action="@{/add-data}" method="post">
+            <select name="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="formation_universitaire">Formation Universitaire</option>
+                <option value="formation_continue">Formation Continue</option>
+                <option value="langues">Langues</option>
+                <option value="outils_informatiques">Outils Informatiques</option>
+                <option value="autres_projets">Autres Projets</option>
+                <option value="experience_professionnelle">Expérience Professionnelle</option>
+            </select>
+            <input type="text" name="title" placeholder="Title" required>
+            <textarea name="content" rows="5" placeholder="Content" required></textarea>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Supprimer donnée</h2>
+        <form th:action="@{/delete-data}" method="post">
+            <select name="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="formation_universitaire">Formation Universitaire</option>
+                <option value="formation_continue">Formation Continue</option>
+                <option value="langues">Langues</option>
+                <option value="outils_informatiques">Outils Informatiques</option>
+                <option value="autres_projets">Autres Projets</option>
+                <option value="experience_professionnelle">Expérience Professionnelle</option>
+            </select>
+            <input type="text" name="title" placeholder="Title" required>
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
